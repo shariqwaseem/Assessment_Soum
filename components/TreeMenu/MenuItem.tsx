@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 import {View, Text, StyleSheet, FlatList, TouchableOpacity} from "react-native";
 import {BlueprintObjType} from "../../types/Entries";
 import Checkbox from "expo-checkbox";
@@ -13,28 +13,36 @@ interface Props {
 const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 	const [showChildren, setShowChildren] = useState(false);
 	const selected = state?.includes(item.id) ?? false;
-	const addItemRecursivelyToState = (item: BlueprintObjType) => {
-		dispatch({
-			type: "ADD_ID",
-			payload: item.id,
-		});
-		if (item.subCat && item?.subCat?.length > 0) {
-			item.subCat.forEach((subItem) => {
-				addItemRecursivelyToState(subItem);
+	const addItemRecursivelyToState = useCallback(
+		(item: BlueprintObjType) => {
+			dispatch({
+				type: "ADD_ID",
+				payload: item.id,
 			});
-		}
-	};
-	const removeItemRecursivelyToState = (item: BlueprintObjType) => {
-		dispatch({
-			type: "REMOVE_ID",
-			payload: item?.id,
-		});
-		if (item.subCat && item?.subCat?.length > 0) {
-			item.subCat.forEach((subItem) => {
-				removeItemRecursivelyToState(subItem);
+			if (item.subCat && item?.subCat?.length > 0) {
+				item.subCat.forEach((subItem) => {
+					addItemRecursivelyToState(subItem);
+				});
+			}
+		},
+		[dispatch],
+	);
+
+	const removeItemRecursivelyToState = useCallback(
+		(item: BlueprintObjType) => {
+			dispatch({
+				type: "REMOVE_ID",
+				payload: item?.id,
 			});
-		}
-	};
+			if (item.subCat && item?.subCat?.length > 0) {
+				item.subCat.forEach((subItem) => {
+					removeItemRecursivelyToState(subItem);
+				});
+			}
+		},
+		[dispatch],
+	);
+
 	return (
 		<TouchableOpacity
 			activeOpacity={!item?.subCat?.length ? 1 : 0.5}
@@ -63,7 +71,7 @@ const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 				<Text>{item.name}</Text>
 			</View>
 			{item?.subCat?.length && showChildren && (
-				<View style={[styles.subMenu]}>
+				<View style={styles.subMenu}>
 					<FlatList
 						data={item?.subCat}
 						keyExtractor={(item) => item.id.toString()}
@@ -108,7 +116,6 @@ const styles = StyleSheet.create({
 		marginTop: 15,
 	},
 	checkAndText: {
-		// display:"flex",
 		flexDirection: "row",
 		alignItems: "center",
 		gap: 10,

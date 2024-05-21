@@ -162,21 +162,20 @@ export const dataBlueprint: BlueprintObjType[] = [
 			},
 			{
 				id: uuid.v4(),
-				name: "PCs",
+				name: "Samsung Watches",
 				subCat: [
 					{
 						id: uuid.v4(),
-						name: "Lenovo Thinkpad",
+						name: "Samsung watch 1",
 						subCat: [
-							{id: uuid.v4(), name: "Core i7"},
-							{id: uuid.v4(), name: "Core i5"},
-							{id: uuid.v4(), name: "Core i9"},
+							{id: uuid.v4(), name: "Leather Strap LTE"},
+							{id: uuid.v4(), name: "Metal Strap Non-LTE"},
 						],
 					},
 					{
 						id: uuid.v4(),
-						name: "HP",
-						subCat: [{id: uuid.v4(), name: "Core i9 128GB"}],
+						name: "Samsung Watch 2",
+						subCat: [{id: uuid.v4(), name: "Gold 256GB"}],
 					},
 				],
 			},
