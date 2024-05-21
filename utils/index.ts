@@ -1,15 +1,18 @@
 import uuid from "react-native-uuid";
-import {RandomEntry} from "../types/Entries";
+import {BlueprintObjType, RandomEntry} from "../types/Entries";
 
-function getRandomElement<T>(arr: T[]): T {
-	return arr[Math.floor(Math.random() * arr.length)];
+function getRandomElement<T>(arr: T[] | undefined): T {
+	if (arr) {
+		return arr[Math.floor(Math.random() * arr.length)];
+	}
+	return null as T;
 }
 
 function generateRandomEntry() {
 	const typeEntry = getRandomElement(dataBlueprint);
-	const brandEntry = getRandomElement(typeEntry.brand);
-	const modelEntry = getRandomElement(brandEntry.model);
-	const variantEntry = getRandomElement(modelEntry.variant);
+	const brandEntry = getRandomElement(typeEntry?.subCat);
+	const modelEntry = getRandomElement(brandEntry?.subCat);
+	const variantEntry = getRandomElement(modelEntry?.subCat);
 
 	return {
 		type: typeEntry.name,
@@ -26,19 +29,19 @@ export function generateRandomEntries(count: number): RandomEntry[] {
 	return entries;
 }
 
-const dataBlueprint = [
+export const dataBlueprint: BlueprintObjType[] = [
 	{
 		id: uuid.v4(),
 		name: "Phones",
-		brand: [
+		subCat: [
 			{
 				id: uuid.v4(),
 				name: "Apple",
-				model: [
+				subCat: [
 					{
 						id: uuid.v4(),
 						name: "iPhone 6",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "128GB"},
 							{id: uuid.v4(), name: "256GB"},
 							{id: uuid.v4(), name: "512GB"},
@@ -47,7 +50,7 @@ const dataBlueprint = [
 					{
 						id: uuid.v4(),
 						name: "iPhone 7",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "128GB"},
 							{id: uuid.v4(), name: "256GB"},
 							{id: uuid.v4(), name: "512GB"},
@@ -58,11 +61,11 @@ const dataBlueprint = [
 			{
 				id: uuid.v4(),
 				name: "Samsung",
-				model: [
+				subCat: [
 					{
 						id: uuid.v4(),
 						name: "Galaxy S21",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "128GB"},
 							{id: uuid.v4(), name: "256GB"},
 							{id: uuid.v4(), name: "512GB"},
@@ -71,7 +74,7 @@ const dataBlueprint = [
 					{
 						id: uuid.v4(),
 						name: "Z Fold",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "128GB"},
 							{id: uuid.v4(), name: "256GB"},
 							{id: uuid.v4(), name: "512GB"},
@@ -84,15 +87,15 @@ const dataBlueprint = [
 	{
 		id: uuid.v4(),
 		name: "Computers",
-		brand: [
+		subCat: [
 			{
 				id: uuid.v4(),
 				name: "Macbooks",
-				model: [
+				subCat: [
 					{
 						id: uuid.v4(),
 						name: "Macbook Air 2023",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "128GB"},
 							{id: uuid.v4(), name: "256GB"},
 							{id: uuid.v4(), name: "512GB"},
@@ -101,7 +104,7 @@ const dataBlueprint = [
 					{
 						id: uuid.v4(),
 						name: "Macbook Pro",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "M1 256GB"},
 							{id: uuid.v4(), name: "M2 512GB"},
 							{id: uuid.v4(), name: "M3 Pro 1TB"},
@@ -112,11 +115,11 @@ const dataBlueprint = [
 			{
 				id: uuid.v4(),
 				name: "PCs",
-				model: [
+				subCat: [
 					{
 						id: uuid.v4(),
 						name: "Lenovo Thinkpad",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "Core i7"},
 							{id: uuid.v4(), name: "Core i5"},
 							{id: uuid.v4(), name: "Core i9"},
@@ -125,7 +128,7 @@ const dataBlueprint = [
 					{
 						id: uuid.v4(),
 						name: "HP",
-						variant: [{id: uuid.v4(), name: "Core i9 128GB"}],
+						subCat: [{id: uuid.v4(), name: "Core i9 128GB"}],
 					},
 				],
 			},
@@ -134,15 +137,15 @@ const dataBlueprint = [
 	{
 		id: uuid.v4(),
 		name: "Watches",
-		brand: [
+		subCat: [
 			{
 				id: uuid.v4(),
 				name: "Apple Watches",
-				model: [
+				subCat: [
 					{
 						id: uuid.v4(),
 						name: "Apple Watch 2023",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "128GB"},
 							{id: uuid.v4(), name: "LTE 128GB"},
 						],
@@ -150,7 +153,7 @@ const dataBlueprint = [
 					{
 						id: uuid.v4(),
 						name: "Apple Watch Pro",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "256GB"},
 							{id: uuid.v4(), name: "LTE 512GB"},
 						],
@@ -160,11 +163,11 @@ const dataBlueprint = [
 			{
 				id: uuid.v4(),
 				name: "PCs",
-				model: [
+				subCat: [
 					{
 						id: uuid.v4(),
 						name: "Lenovo Thinkpad",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "Core i7"},
 							{id: uuid.v4(), name: "Core i5"},
 							{id: uuid.v4(), name: "Core i9"},
@@ -173,7 +176,7 @@ const dataBlueprint = [
 					{
 						id: uuid.v4(),
 						name: "HP",
-						variant: [{id: uuid.v4(), name: "Core i9 128GB"}],
+						subCat: [{id: uuid.v4(), name: "Core i9 128GB"}],
 					},
 				],
 			},
@@ -182,15 +185,15 @@ const dataBlueprint = [
 	{
 		id: uuid.v4(),
 		name: "TVs",
-		brand: [
+		subCat: [
 			{
 				id: uuid.v4(),
 				name: "Samsung TVs",
-				model: [
+				subCat: [
 					{
 						id: uuid.v4(),
 						name: "Samsung TV 2023",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "51' LTE"},
 							{id: uuid.v4(), name: "32'"},
 						],
@@ -198,7 +201,7 @@ const dataBlueprint = [
 					{
 						id: uuid.v4(),
 						name: "Samsung TV 2021",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "51' LTE"},
 							{id: uuid.v4(), name: "32'"},
 						],
@@ -208,11 +211,11 @@ const dataBlueprint = [
 			{
 				id: uuid.v4(),
 				name: "Apple TVs",
-				model: [
+				subCat: [
 					{
 						id: uuid.v4(),
 						name: "Apple TV 2021",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "51' LTE"},
 							{id: uuid.v4(), name: "32'"},
 						],
@@ -220,7 +223,7 @@ const dataBlueprint = [
 					{
 						id: uuid.v4(),
 						name: "Apple TV 2019",
-						variant: [
+						subCat: [
 							{id: uuid.v4(), name: "51' LTE"},
 							{id: uuid.v4(), name: "32'"},
 						],

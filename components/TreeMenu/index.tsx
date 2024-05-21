@@ -1,24 +1,34 @@
 import React, {useMemo} from "react";
 import {FlatList, Text, View} from "react-native";
 import {generateRandomEntries} from "../../utils";
-import {RandomEntry} from "../../types/Entries";
+import {StyleSheet} from "react-native";
+import {BlueprintObjType, RandomEntry} from "../../types/Entries";
+import MenuItem from "./MenuItem";
+const ItemSeparator = () => <View style={styles.separator} />;
 
-const TreeMenu = ({data}: {data: RandomEntry[]}) => {
+const TreeMenu = ({
+	data,
+	dataBlueprint,
+}: {
+	data: RandomEntry[];
+	dataBlueprint: BlueprintObjType[];
+}) => {
 	return (
 		<FlatList
-			data={data}
+			style={{gap: 4}}
+			data={dataBlueprint}
+			keyExtractor={(item) => item.id.toString()}
+			ItemSeparatorComponent={ItemSeparator}
 			renderItem={({item}) => {
-				return (
-					<View style={{borderWidth: 1}}>
-						<Text>{item.brand}</Text>
-						<Text>{item.model}</Text>
-						<Text>{item.variant}</Text>
-						<Text>{item.type}</Text>
-					</View>
-				);
+				return <MenuItem item={item} />;
 			}}
 		/>
 	);
 };
+const styles = StyleSheet.create({
+	separator: {
+		height: 5,
+	},
+});
 
 export default TreeMenu;

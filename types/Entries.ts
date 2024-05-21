@@ -4,3 +4,9 @@ export interface RandomEntry {
 	model: string;
 	variant: string;
 }
+
+export interface BlueprintObjType {
+	id: string | number[];
+	name: string;
+	subCat?: BlueprintObjType[];
+}
