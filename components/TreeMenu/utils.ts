@@ -1,23 +1,52 @@
+import {BlueprintObjType} from "../../types/Entries";
+
 interface AddIdAction {
-	type: "ADD_ID";
-	payload: string | number | number[];
+	type: "ADD";
+	payload: BlueprintObjType;
 }
 
 interface RemoveIdAction {
-	type: "REMOVE_ID";
-	payload: string | number | number[];
+	type: "REMOVE";
+	payload: BlueprintObjType;
 }
 
 export type Action = AddIdAction | RemoveIdAction;
 
-export type State = Array<string | number | number[]>;
-export const reducer = (state: State, action: Action): State => {
-	switch (action.type) {
-		case "ADD_ID":
-			return [...state, action.payload];
-		case "REMOVE_ID":
-			return state.filter((id) => id !== action.payload);
-		default:
-			return state;
+export type State = Array<string>;
+export function extractAllIds(data: BlueprintObjType): string[] {
+	let ids: string[] = [];
+
+	function recurse(item: BlueprintObjType) {
+		ids.push(item.id as string);
+		item?.subCat?.forEach((subItem) => {
+			recurse(subItem);
+		});
 	}
+
+	recurse(data);
+	return ids;
+}
+
+export const getAncestors = (
+	target: string,
+	blueprint: BlueprintObjType[] | undefined,
+	ancestors = [] as string[],
+): string[] | undefined => {
+	if (!blueprint) {
+		return undefined;
+	}
+	for (let node of blueprint) {
+		if (node.id === target) {
+			return ancestors.concat(node.id as string);
+		}
+		const found = getAncestors(
+			target,
+			node?.subCat,
+			ancestors.concat(node.id as string),
+		);
+		if (found) {
+			return found;
+		}
+	}
+	return undefined;
 };

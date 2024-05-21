@@ -1,9 +1,16 @@
-import React, {useReducer} from "react";
+import React, {useCallback, useReducer} from "react";
 import {FlatList, View, Text} from "react-native";
 import {StyleSheet} from "react-native";
 import {BlueprintObjType, RandomEntry} from "../../types/Entries";
 import MenuItem from "./MenuItem";
-import {reducer} from "./utils";
+import {
+	Action,
+	State,
+	extractAllIds,
+	f,
+	getAncestors,
+	getParentsById,
+} from "./utils";
 const ItemSeparator = () => <View style={styles.separator} />;
 
 const TreeMenu = ({
@@ -13,6 +20,28 @@ const TreeMenu = ({
 	data: RandomEntry[];
 	dataBlueprint: BlueprintObjType[];
 }) => {
+	const reducer = useCallback(
+		(state: State, action: Action): State => {
+			const ids = extractAllIds(action.payload);
+
+			switch (action.type) {
+				case "ADD":
+					return [...state, ...ids];
+				case "REMOVE": {
+					const parents = getAncestors(
+						action.payload.id as string,
+						dataBlueprint,
+					);
+					return state.filter(
+						(id) => !ids.includes(id) && !parents?.includes(id),
+					);
+				}
+				default:
+					return state;
+			}
+		},
+		[dataBlueprint],
+	);
 	const [state, dispatch] = useReducer(reducer, []);
 	return (
 		<View style={styles.container}>
@@ -33,7 +62,9 @@ const TreeMenu = ({
 					}}
 				/>
 			</View>
-			<Text style={styles.info}>{JSON.stringify(state)}</Text>
+			<Text selectable style={styles.info}>
+				{JSON.stringify(state)}
+			</Text>
 		</View>
 	);
 };

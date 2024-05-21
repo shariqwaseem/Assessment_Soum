@@ -12,33 +12,23 @@ interface Props {
 }
 const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 	const [showChildren, setShowChildren] = useState(false);
-	const selected = state?.includes(item.id) ?? false;
-	const addItemRecursivelyToState = useCallback(
+	const selected = state?.includes(item.id as string);
+	const selectItem = useCallback(
 		(item: BlueprintObjType) => {
 			dispatch({
-				type: "ADD_ID",
-				payload: item.id,
+				type: "ADD",
+				payload: item,
 			});
-			if (item.subCat && item?.subCat?.length > 0) {
-				item.subCat.forEach((subItem) => {
-					addItemRecursivelyToState(subItem);
-				});
-			}
 		},
 		[dispatch],
 	);
 
-	const removeItemRecursivelyFromState = useCallback(
+	const deselectItem = useCallback(
 		(item: BlueprintObjType) => {
 			dispatch({
-				type: "REMOVE_ID",
-				payload: item?.id,
+				type: "REMOVE",
+				payload: item,
 			});
-			if (item.subCat && item?.subCat?.length > 0) {
-				item.subCat.forEach((subItem) => {
-					removeItemRecursivelyFromState(subItem);
-				});
-			}
 		},
 		[dispatch],
 	);
@@ -62,9 +52,9 @@ const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 					value={selected}
 					onValueChange={(newVal) => {
 						if (!newVal) {
-							removeItemRecursivelyFromState(item);
+							deselectItem(item);
 						} else {
-							addItemRecursivelyToState(item);
+							selectItem(item);
 						}
 					}}
 				/>
@@ -110,7 +100,6 @@ const styles = StyleSheet.create({
 		margin: 2,
 		justifyContent: "center",
 		borderRadius: 3,
-		backgroundColor: "#ededed",
 	},
 	subMenu: {
 		marginTop: 15,
