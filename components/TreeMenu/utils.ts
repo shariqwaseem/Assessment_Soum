@@ -26,7 +26,27 @@ export function extractAllIds(data: BlueprintObjType): string[] {
 	recurse(data);
 	return ids;
 }
-
+export function findById(
+	array: BlueprintObjType[],
+	id: string | undefined,
+): BlueprintObjType | undefined {
+	if (!id) {
+		return undefined;
+	}
+	for (const item of array) {
+		if (item.id === id) return item;
+		if (item.subCat?.length) {
+			const innerResult = findById(item.subCat, id);
+			if (innerResult) return innerResult;
+		}
+	}
+}
+export function getLastTwoElements<T>(arr: T[]): T[] {
+	if (arr.length <= 2) {
+		return arr;
+	}
+	return arr.slice(-2);
+}
 export const getAncestors = (
 	target: string,
 	blueprint: BlueprintObjType[] | undefined,
@@ -50,3 +70,25 @@ export const getAncestors = (
 	}
 	return undefined;
 };
+
+export function getChildren(targetKey: string, data: BlueprintObjType[]) {
+	const targetKeysSet = new Set([targetKey]);
+	const outputKeys: string[] = [];
+	function getKeysHelper(
+		data: BlueprintObjType[] | undefined,
+		hasParentMatched = false,
+	) {
+		if (data) {
+			data?.forEach((d) => {
+				if (targetKeysSet.has(d.id as string) || hasParentMatched) {
+					outputKeys.push(d.id as string);
+					getKeysHelper(d.subCat, true);
+				} else {
+					getKeysHelper(d.subCat);
+				}
+			});
+		}
+	}
+	getKeysHelper(data);
+	return outputKeys;
+}
