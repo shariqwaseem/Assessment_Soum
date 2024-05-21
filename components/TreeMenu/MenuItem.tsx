@@ -28,7 +28,7 @@ const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 		[dispatch],
 	);
 
-	const removeItemRecursivelyToState = useCallback(
+	const removeItemRecursivelyFromState = useCallback(
 		(item: BlueprintObjType) => {
 			dispatch({
 				type: "REMOVE_ID",
@@ -36,7 +36,7 @@ const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 			});
 			if (item.subCat && item?.subCat?.length > 0) {
 				item.subCat.forEach((subItem) => {
-					removeItemRecursivelyToState(subItem);
+					removeItemRecursivelyFromState(subItem);
 				});
 			}
 		},
@@ -62,7 +62,7 @@ const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 					value={selected}
 					onValueChange={(newVal) => {
 						if (!newVal) {
-							removeItemRecursivelyToState(item);
+							removeItemRecursivelyFromState(item);
 						} else {
 							addItemRecursivelyToState(item);
 						}
