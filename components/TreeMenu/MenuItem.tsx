@@ -1,15 +1,19 @@
-import React from "react";
-import {View, Text, StyleSheet, FlatList} from "react-native";
+import React, {useState} from "react";
+import {View, Text, StyleSheet, FlatList, TouchableOpacity} from "react-native";
 import {BlueprintObjType} from "../../types/Entries";
 
 interface Props {
 	item: BlueprintObjType;
 }
 const MenuItem = ({item}: Props) => {
+	const [showChildren, setShowChildren] = useState(false);
 	return (
-		<View style={styles.container}>
+		<TouchableOpacity
+			onPress={() => setShowChildren((old) => !old)}
+			style={styles.container}
+		>
 			<Text>{item.name}</Text>
-			{item?.subCat?.length && (
+			{item?.subCat?.length && showChildren && (
 				<FlatList
 					style={{gap: 4}}
 					data={item?.subCat}
@@ -19,14 +23,14 @@ const MenuItem = ({item}: Props) => {
 					}}
 				/>
 			)}
-		</View>
+		</TouchableOpacity>
 	);
 };
 
 const styles = StyleSheet.create({
 	container: {
-		// height: 50,
-		padding: 5,
+		padding: 10,
+		margin: 2,
 		justifyContent: "center",
 		borderWidth: 1,
 		borderRadius: 3,
