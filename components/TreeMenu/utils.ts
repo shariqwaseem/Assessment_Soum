@@ -41,12 +41,7 @@ export function findById(
 		}
 	}
 }
-export function getLastTwoElements<T>(arr: T[]): T[] {
-	if (arr.length <= 2) {
-		return arr;
-	}
-	return arr.slice(-2);
-}
+
 export const getAncestors = (
 	target: string,
 	blueprint: BlueprintObjType[] | undefined,
@@ -71,6 +66,7 @@ export const getAncestors = (
 	return undefined;
 };
 
+// Logic courtesy: https://stackoverflow.com/a/72631209
 export function getChildren(targetKey: string, data: BlueprintObjType[]) {
 	const targetKeysSet = new Set([targetKey]);
 	const outputKeys: string[] = [];
