@@ -7,7 +7,7 @@ import {generateRandomEntries, dataBlueprint} from "./utils";
 import {DataContext} from "./contexts";
 
 export default function App() {
-	const randomData = useMemo(() => generateRandomEntries(1000), []);
+	const randomData = useMemo(() => generateRandomEntries(300), []);
 
 	return (
 		<SafeAreaView style={styles.root}>

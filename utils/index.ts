@@ -19,6 +19,7 @@ function generateRandomEntry() {
 		brand: {name: brandEntry.name, id: brandEntry.id},
 		model: {name: modelEntry.name, id: modelEntry.id},
 		variant: {name: variantEntry.name, id: variantEntry.id},
+		id: uuid.v4(),
 	};
 }
 export function generateRandomEntries(count: number): RandomEntry[] {

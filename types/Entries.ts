@@ -3,6 +3,7 @@ export interface RandomEntry {
 	brand: {name: string; id: string | number[]};
 	model: {name: string; id: string | number[]};
 	variant: {name: string; id: string | number[]};
+	id: string | number[];
 }
 
 export interface BlueprintObjType {
