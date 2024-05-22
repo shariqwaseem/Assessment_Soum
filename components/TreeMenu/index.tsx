@@ -109,7 +109,7 @@ const TreeMenu = () => {
 					data={dataBlueprint}
 					keyExtractor={(item) => item.id.toString()}
 					ItemSeparatorComponent={ItemSeparator}
-					ListFooterComponent={<View style={styles.listFooter} />}
+					contentContainerStyle={{padding: 10}}
 					renderItem={({item}) => {
 						return (
 							<MenuItem
@@ -137,12 +137,10 @@ const styles = StyleSheet.create({
 	},
 	info: {
 		flex: 1,
+		paddingHorizontal: 10,
 	},
 	container: {
 		flex: 1,
-	},
-	listFooter: {
-		marginBottom: 20,
 	},
 });
 
