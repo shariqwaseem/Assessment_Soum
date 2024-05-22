@@ -8,6 +8,7 @@ const Tags = ({tags}: {tags: (string | undefined)[]}) => {
 	return (
 		<View style={styles.root}>
 			<Text>Selected variants:</Text>
+
 			<FlatList
 				data={tags}
 				renderItem={({item}: {item: string | undefined}) => {
@@ -17,9 +18,12 @@ const Tags = ({tags}: {tags: (string | undefined)[]}) => {
 						</View>
 					);
 				}}
+				ListEmptyComponent={
+					<Text style={styles.emptyText}>None so far</Text>
+				}
 				keyExtractor={(_, index: number) => index.toString()}
 				horizontal={true}
-				contentContainerStyle={{flexDirection: "row", flexWrap: "wrap"}}
+				contentContainerStyle={{height: 30}}
 				showsHorizontalScrollIndicator={false}
 				showsVerticalScrollIndicator={false}
 			/>
@@ -35,6 +39,9 @@ const styles = StyleSheet.create({
 		gap: 8,
 		flexWrap: "wrap",
 		flex: 1,
+	},
+	emptyText: {
+		color: "grey",
 	},
 	tag: {
 		backgroundColor: "#E8E8E8",

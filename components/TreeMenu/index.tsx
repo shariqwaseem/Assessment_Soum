@@ -1,7 +1,6 @@
-import React, {useCallback, useEffect, useMemo, useReducer} from "react";
-import {FlatList, View, Text} from "react-native";
+import React, {useCallback, useContext, useMemo, useReducer} from "react";
+import {FlatList, View} from "react-native";
 import {StyleSheet} from "react-native";
-import {BlueprintObjType, RandomEntry} from "../../types/Entries";
 import MenuItem from "./MenuItem";
 import {
 	Action,
@@ -12,15 +11,11 @@ import {
 	getChildren,
 } from "./utils";
 import Tags from "./Tags";
+import {DataContext} from "../../contexts";
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const TreeMenu = ({
-	data,
-	dataBlueprint,
-}: {
-	data: RandomEntry[];
-	dataBlueprint: BlueprintObjType[];
-}) => {
+const TreeMenu = () => {
+	const {dataBlueprint} = useContext(DataContext);
 	const reducer = useCallback(
 		(state: State, action: Action): State => {
 			const ids = extractAllIds(action.payload);

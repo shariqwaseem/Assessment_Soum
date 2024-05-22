@@ -15,10 +15,10 @@ function generateRandomEntry() {
 	const variantEntry = getRandomElement(modelEntry?.subCat);
 
 	return {
-		type: typeEntry.name,
-		brand: brandEntry.name,
-		model: modelEntry.name,
-		variant: variantEntry.name,
+		type: {name: typeEntry.name, id: typeEntry.id},
+		brand: {name: brandEntry.name, id: brandEntry.id},
+		model: {name: modelEntry.name, id: modelEntry.id},
+		variant: {name: variantEntry.name, id: variantEntry.id},
 	};
 }
 export function generateRandomEntries(count: number): RandomEntry[] {
@@ -36,7 +36,7 @@ export const dataBlueprint: BlueprintObjType[] = [
 		subCat: [
 			{
 				id: uuid.v4(),
-				name: "Apple",
+				name: "Apple iPhones",
 				subCat: [
 					{
 						id: uuid.v4(),
@@ -60,7 +60,7 @@ export const dataBlueprint: BlueprintObjType[] = [
 			},
 			{
 				id: uuid.v4(),
-				name: "Samsung",
+				name: "Samsung Phones",
 				subCat: [
 					{
 						id: uuid.v4(),
@@ -166,7 +166,7 @@ export const dataBlueprint: BlueprintObjType[] = [
 				subCat: [
 					{
 						id: uuid.v4(),
-						name: "Samsung watch 1",
+						name: "Samsung Watch 1",
 						subCat: [
 							{id: uuid.v4(), name: "Leather Strap LTE"},
 							{id: uuid.v4(), name: "Metal Strap Non-LTE"},

@@ -65,6 +65,21 @@ export const getAncestors = (
 	}
 	return undefined;
 };
+export function convertNumberToRange(number: number): string {
+	if (number <= 24) {
+		return number.toString();
+	} else if (number <= 49) {
+		return "25+";
+	} else if (number <= 99) {
+		return "50+";
+	} else if (number <= 199) {
+		return "100+";
+	} else if (number <= 499) {
+		return "200+";
+	} else {
+		return "500+";
+	}
+}
 
 // Logic courtesy: https://stackoverflow.com/a/72631209
 export function getChildren(targetKey: string, data: BlueprintObjType[]) {

@@ -4,14 +4,17 @@ import {SafeAreaView, StyleSheet, Text, View} from "react-native";
 import TreeMenu from "./components/TreeMenu";
 import {useMemo} from "react";
 import {generateRandomEntries, dataBlueprint} from "./utils";
+import {DataContext} from "./contexts";
 
 export default function App() {
-	const randomData = useMemo(() => generateRandomEntries(100), []);
+	const randomData = useMemo(() => generateRandomEntries(1000), []);
 
 	return (
 		<SafeAreaView style={styles.root}>
 			<View style={styles.container}>
-				<TreeMenu data={randomData} dataBlueprint={dataBlueprint} />
+				<DataContext.Provider value={{data: randomData, dataBlueprint}}>
+					<TreeMenu />
+				</DataContext.Provider>
 			</View>
 			<StatusBar style="auto" />
 		</SafeAreaView>

@@ -1,8 +1,9 @@
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useContext, useMemo, useState} from "react";
 import {View, Text, StyleSheet, FlatList, TouchableOpacity} from "react-native";
 import {BlueprintObjType} from "../../types/Entries";
 import Checkbox from "expo-checkbox";
-import {Action, State} from "./utils";
+import {Action, State, convertNumberToRange, findById} from "./utils";
+import {DataContext} from "../../contexts";
 
 interface Props {
 	item: BlueprintObjType;
@@ -11,8 +12,25 @@ interface Props {
 	state: State;
 }
 const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
+	const {data} = useContext(DataContext);
 	const [showChildren, setShowChildren] = useState(false);
 	const selected = state?.includes(item.id as string);
+	const count = useMemo(
+		() =>
+			convertNumberToRange(
+				data.reduce((acc, dItem) => {
+					if (
+						Object.values(dItem)
+							.map((s) => s.id)
+							.includes(item.id)
+					) {
+						return acc + 1;
+					}
+					return acc;
+				}, 0),
+			),
+		[data],
+	);
 	const selectItem = useCallback(
 		(item: BlueprintObjType) => {
 			dispatch({
@@ -58,7 +76,10 @@ const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 						}
 					}}
 				/>
-				<Text>{item.name}</Text>
+				<View>
+					<Text>{item.name}</Text>
+					<Text style={styles.smallText}>{count} devices</Text>
+				</View>
 			</View>
 			{item?.subCat?.length && showChildren && (
 				<View style={styles.subMenu}>
@@ -87,9 +108,9 @@ const getBackgroundColor = (colorShade: number) => {
 		case 1:
 			return "#F0F0F0";
 		case 2:
-			return "#E8E8E8";
+			return "#F5F5F5";
 		case 3:
-			return "#F8F8F8";
+			return "white";
 		default:
 			return "#E8E8E8";
 	}
@@ -103,6 +124,9 @@ const styles = StyleSheet.create({
 	},
 	subMenu: {
 		marginTop: 15,
+	},
+	smallText: {
+		fontSize: 9,
 	},
 	checkAndText: {
 		flexDirection: "row",

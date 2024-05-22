@@ -1,8 +1,8 @@
 export interface RandomEntry {
-	type: string;
-	brand: string;
-	model: string;
-	variant: string;
+	type: {name: string; id: string | number[]};
+	brand: {name: string; id: string | number[]};
+	model: {name: string; id: string | number[]};
+	variant: {name: string; id: string | number[]};
 }
 
 export interface BlueprintObjType {
