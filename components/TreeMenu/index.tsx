@@ -97,7 +97,7 @@ const TreeMenu = () => {
 					findById(dataBlueprint, id)?.name
 				);
 			}
-			return findById(dataBlueprint, id)?.name;
+			return "All " + findById(dataBlueprint, id)?.name;
 		});
 	}, [dataBlueprint, state]);
 
