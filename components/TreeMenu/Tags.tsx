@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet, ScrollView, FlatList} from "react-native";
+import {View, Text, StyleSheet, FlatList} from "react-native";
 
 const Tags = ({tags}: {tags: (string | undefined)[]}) => {
 	if (!tags) {
@@ -10,7 +10,7 @@ const Tags = ({tags}: {tags: (string | undefined)[]}) => {
 			<Text>Selected variants:</Text>
 
 			<FlatList
-				data={tags}
+				data={tags.toReversed()}
 				renderItem={({item}: {item: string | undefined}) => {
 					return (
 						<View style={styles.tag}>

@@ -102,7 +102,7 @@ const TreeMenu = () => {
 	}, [dataBlueprint, state]);
 
 	return (
-		<View style={styles.container}>
+		<View style={styles.container} testID="tree-menu">
 			<View style={styles.flatlist}>
 				<FlatList
 					data={dataBlueprint}

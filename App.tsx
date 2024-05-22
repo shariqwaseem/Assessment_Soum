@@ -1,5 +1,5 @@
 import {StatusBar} from "expo-status-bar";
-import {SafeAreaView, StyleSheet, Text, View} from "react-native";
+import {SafeAreaView, StyleSheet, View} from "react-native";
 
 import TreeMenu from "./components/TreeMenu";
 import {useMemo} from "react";
@@ -10,7 +10,7 @@ export default function App() {
 	const randomData = useMemo(() => generateRandomEntries(300), []);
 
 	return (
-		<SafeAreaView style={styles.root}>
+		<SafeAreaView style={styles.root} testID="app-root">
 			<View style={styles.container}>
 				<DataContext.Provider value={{data: randomData, dataBlueprint}}>
 					<TreeMenu />

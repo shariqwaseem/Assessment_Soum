@@ -2,7 +2,7 @@ import React, {useCallback, useContext, useMemo, useState} from "react";
 import {View, Text, StyleSheet, FlatList, TouchableOpacity} from "react-native";
 import {BlueprintObjType} from "../../types/Entries";
 import Checkbox from "expo-checkbox";
-import {Action, State, convertNumberToRange, findById} from "./utils";
+import {Action, State, convertNumberToRange} from "./utils";
 import {DataContext} from "../../contexts";
 
 interface Props {
@@ -53,6 +53,7 @@ const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 
 	return (
 		<TouchableOpacity
+			testID={`menu-item-${item.id}`}
 			activeOpacity={!item?.subCat?.length ? 1 : 0.5}
 			onPress={() => {
 				setShowChildren((old) => {
@@ -82,7 +83,10 @@ const MenuItem = ({item, colorShade, dispatch, state}: Props) => {
 				</View>
 			</View>
 			{item?.subCat?.length && showChildren && (
-				<View style={styles.subMenu}>
+				<View
+					testID={`toggle-sub-menu-${item.id}`}
+					style={styles.subMenu}
+				>
 					<FlatList
 						data={item?.subCat}
 						keyExtractor={(item) => item.id.toString()}

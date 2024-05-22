@@ -1,0 +1,1269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders properly without issues 1`] = `
+<RCTSafeAreaView
+  style={
+    {
+      "flex": 1,
+    }
+  }
+  testID="app-root"
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "paddingHorizontal": 10,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flex": 1,
+        }
+      }
+      testID="tree-menu"
+    >
+      <View
+        style={
+          {
+            "flex": 8,
+          }
+        }
+      >
+        <RCTScrollView
+          ItemSeparatorComponent={[Function]}
+          ListFooterComponent={
+            <View
+              style={
+                {
+                  "marginBottom": 20,
+                }
+              }
+            />
+          }
+          data={
+            [
+              {
+                "id": "35ec5269-f204-4831-9174-df635b11e628",
+                "name": "Phones",
+                "subCat": [
+                  {
+                    "id": "f25c78f7-4591-4ff7-9724-da347aa63527",
+                    "name": "Apple iPhones",
+                    "subCat": [
+                      {
+                        "id": "2347c2ca-9bfc-4ad2-bd6f-7824a4ffd232",
+                        "name": "iPhone 6",
+                        "subCat": [
+                          {
+                            "id": "70f9eb36-b1da-4d49-86f0-aec428661dee",
+                            "name": "128GB",
+                          },
+                          {
+                            "id": "7d9f312b-6a37-4c90-ba16-c9a9fba69134",
+                            "name": "256GB",
+                          },
+                          {
+                            "id": "6f15e3ce-46e4-4ee4-88c5-1e96bc4cb8db",
+                            "name": "512GB",
+                          },
+                        ],
+                      },
+                      {
+                        "id": "af0134b9-1515-4bcc-9d78-cb6fdabf0cde",
+                        "name": "iPhone 7",
+                        "subCat": [
+                          {
+                            "id": "7ca043b9-b0a1-4346-9876-b4f3b187ec1f",
+                            "name": "128GB",
+                          },
+                          {
+                            "id": "3cff8bef-e284-4258-abb7-e1ac3704383a",
+                            "name": "256GB",
+                          },
+                          {
+                            "id": "b98866d2-f218-482b-8cc9-8cb45b5f41f9",
+                            "name": "512GB",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    "id": "c9f650f7-c5ce-49e8-be49-21435a6465ea",
+                    "name": "Samsung Phones",
+                    "subCat": [
+                      {
+                        "id": "e23e65f9-d621-4b67-81a1-3ecb11c35f86",
+                        "name": "Galaxy S21",
+                        "subCat": [
+                          {
+                            "id": "258d1abe-0d78-4262-8c20-044e120bf0fc",
+                            "name": "128GB",
+                          },
+                          {
+                            "id": "84770754-f74d-4d43-95f5-cb7a445ecdf3",
+                            "name": "256GB",
+                          },
+                          {
+                            "id": "d25a3e03-fae2-4ba6-9143-3369c0449b14",
+                            "name": "512GB",
+                          },
+                        ],
+                      },
+                      {
+                        "id": "eddb9e7c-d938-4a67-8ef1-035365b3276f",
+                        "name": "Z Fold",
+                        "subCat": [
+                          {
+                            "id": "57b8d276-2445-47d6-ac38-462428ca3d3d",
+                            "name": "128GB",
+                          },
+                          {
+                            "id": "905799ab-6a77-42ba-b5d1-ada76ae947dd",
+                            "name": "256GB",
+                          },
+                          {
+                            "id": "689dfff2-b2ce-42f2-a203-1fa92523a254",
+                            "name": "512GB",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                "id": "45d1b6e2-35dd-41ed-b23c-403cad1663c3",
+                "name": "Computers",
+                "subCat": [
+                  {
+                    "id": "2de98173-fa45-487a-a22a-f8a55b9b671e",
+                    "name": "Macbooks",
+                    "subCat": [
+                      {
+                        "id": "480f999b-6c0b-47b6-a841-6eb9bc75728c",
+                        "name": "Macbook Air 2023",
+                        "subCat": [
+                          {
+                            "id": "e592a85b-1584-43aa-8d7b-ab52f6f38dc3",
+                            "name": "128GB",
+                          },
+                          {
+                            "id": "9070dd26-b318-4a6b-ba19-1055b30ebf20",
+                            "name": "256GB",
+                          },
+                          {
+                            "id": "c5aa4ce2-44f8-498a-b7fd-a74eb7ddac21",
+                            "name": "512GB",
+                          },
+                        ],
+                      },
+                      {
+                        "id": "75330067-be3c-4426-99f0-c94c4e2ed415",
+                        "name": "Macbook Pro",
+                        "subCat": [
+                          {
+                            "id": "4b71677f-80a8-40fd-8b64-041ffb4a8e71",
+                            "name": "M1 256GB",
+                          },
+                          {
+                            "id": "5615c47b-9196-419b-86a7-67d3ec77f531",
+                            "name": "M2 512GB",
+                          },
+                          {
+                            "id": "ddcc8664-73c2-451c-bb21-16f21760aeae",
+                            "name": "M3 Pro 1TB",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    "id": "7db02884-541e-4339-afc2-8b272d6794c2",
+                    "name": "PCs",
+                    "subCat": [
+                      {
+                        "id": "2112deb5-59da-4dd9-a23a-02ff416c86db",
+                        "name": "Lenovo Thinkpad",
+                        "subCat": [
+                          {
+                            "id": "fdf85b95-50aa-4894-b365-087f19779d46",
+                            "name": "Core i7",
+                          },
+                          {
+                            "id": "844f8076-f261-417b-9fdc-c06470195188",
+                            "name": "Core i5",
+                          },
+                          {
+                            "id": "74c8d031-10f5-4da4-a929-ac941741f8cb",
+                            "name": "Core i9",
+                          },
+                        ],
+                      },
+                      {
+                        "id": "8e1ac7aa-da8b-445e-9bcb-7c18aaae2035",
+                        "name": "HP",
+                        "subCat": [
+                          {
+                            "id": "0254d0ac-cdf0-4b9e-a146-66d829a05376",
+                            "name": "Core i9 128GB",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                "id": "ef8dffc9-e872-4c01-9849-b2f156a9cc84",
+                "name": "Watches",
+                "subCat": [
+                  {
+                    "id": "8126342e-077a-48a1-ba3d-f93729737520",
+                    "name": "Apple Watches",
+                    "subCat": [
+                      {
+                        "id": "bca4f645-8c3a-4231-b7ac-aee0366e7e47",
+                        "name": "Apple Watch 2023",
+                        "subCat": [
+                          {
+                            "id": "7c7f7ca1-4099-4796-acfd-9a56f0b02ea5",
+                            "name": "128GB",
+                          },
+                          {
+                            "id": "0d41de1f-5c11-4cd7-930b-22fc6a1c7407",
+                            "name": "LTE 128GB",
+                          },
+                        ],
+                      },
+                      {
+                        "id": "a5483045-64d2-466a-b553-a190d3cca620",
+                        "name": "Apple Watch Pro",
+                        "subCat": [
+                          {
+                            "id": "e4f11b9b-2cb8-4e68-997a-27898dbdf7df",
+                            "name": "256GB",
+                          },
+                          {
+                            "id": "cdfb5491-a71c-4111-8967-f048377f9a73",
+                            "name": "LTE 512GB",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    "id": "feb8f9a4-2791-40a9-b437-eb48992f95ba",
+                    "name": "Samsung Watches",
+                    "subCat": [
+                      {
+                        "id": "7dc72ae7-3571-4165-96ec-b892d5423264",
+                        "name": "Samsung Watch 1",
+                        "subCat": [
+                          {
+                            "id": "e6bf0938-42a5-4651-8284-349b8a7e8948",
+                            "name": "Leather Strap LTE",
+                          },
+                          {
+                            "id": "62ec4001-ce07-482c-b8e8-44ae22768291",
+                            "name": "Metal Strap Non-LTE",
+                          },
+                        ],
+                      },
+                      {
+                        "id": "70577fd9-3de4-4801-b628-c05fd19a0cee",
+                        "name": "Samsung Watch 2",
+                        "subCat": [
+                          {
+                            "id": "a943cbd9-543c-4e37-9683-73e6c7375518",
+                            "name": "Gold 256GB",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                "id": "f50e7839-4f90-4960-a767-61f9c383d818",
+                "name": "TVs",
+                "subCat": [
+                  {
+                    "id": "54962856-9d24-46df-90cd-a465c70e1885",
+                    "name": "Samsung TVs",
+                    "subCat": [
+                      {
+                        "id": "178b1d0e-cec2-4c42-b950-c521f726cd0c",
+                        "name": "Samsung TV 2023",
+                        "subCat": [
+                          {
+                            "id": "e5c001f2-3030-470c-85c7-a0452113a851",
+                            "name": "51' LTE",
+                          },
+                          {
+                            "id": "1bd8436b-7935-4268-a0a8-77e2a42e0d8c",
+                            "name": "32'",
+                          },
+                        ],
+                      },
+                      {
+                        "id": "e179840d-0ac9-4171-a33f-824420344c01",
+                        "name": "Samsung TV 2021",
+                        "subCat": [
+                          {
+                            "id": "acbc7677-0719-4e8f-a0f8-fe539ed5279f",
+                            "name": "51' LTE",
+                          },
+                          {
+                            "id": "1000e30d-f73a-4927-a90b-914c5911c4c3",
+                            "name": "32'",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    "id": "da7ec74b-b74e-4c8d-9ebf-39ec45e20eed",
+                    "name": "Apple TVs",
+                    "subCat": [
+                      {
+                        "id": "a05f87e2-563d-4575-bf17-9af71256c10a",
+                        "name": "Apple TV 2021",
+                        "subCat": [
+                          {
+                            "id": "41ba0a03-3819-4e00-bf17-4fabfb11632f",
+                            "name": "51' LTE",
+                          },
+                          {
+                            "id": "639676de-36a6-4146-b812-3c1528b41f24",
+                            "name": "32'",
+                          },
+                        ],
+                      },
+                      {
+                        "id": "19df7dfe-7472-41f4-aac5-d81cd48c67d3",
+                        "name": "Apple TV 2019",
+                        "subCat": [
+                          {
+                            "id": "4314cf2d-43ee-4eca-9de4-2d560d6dc1b3",
+                            "name": "51' LTE",
+                          },
+                          {
+                            "id": "6fe13c53-af69-46b1-adf2-878872af66f9",
+                            "name": "32'",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ]
+          }
+          getItem={[Function]}
+          getItemCount={[Function]}
+          keyExtractor={[Function]}
+          onContentSizeChange={[Function]}
+          onLayout={[Function]}
+          onMomentumScrollBegin={[Function]}
+          onMomentumScrollEnd={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          removeClippedSubviews={false}
+          renderItem={[Function]}
+          scrollEventThrottle={0.0001}
+          stickyHeaderIndices={[]}
+          viewabilityConfigCallbackPairs={[]}
+        >
+          <View>
+            <View
+              onFocusCapture={[Function]}
+              onLayout={[Function]}
+              style={null}
+            >
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "backgroundColor": "#E8E8E8",
+                    "borderRadius": 3,
+                    "justifyContent": "center",
+                    "margin": 2,
+                    "opacity": 1,
+                    "padding": 10,
+                  }
+                }
+                testID="menu-item-35ec5269-f204-4831-9174-df635b11e628"
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 10,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityRole="checkbox"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": false,
+                        "disabled": undefined,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 20,
+                        "left": 10,
+                        "right": 10,
+                        "top": 20,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "borderColor": "#657786",
+                          "borderRadius": 2,
+                          "borderWidth": 2,
+                          "height": 20,
+                          "width": 20,
+                        },
+                        undefined,
+                        false,
+                        false,
+                        undefined,
+                        false,
+                      ]
+                    }
+                  />
+                  <View>
+                    <Text>
+                      Phones
+                    </Text>
+                    <Text
+                      style={
+                        {
+                          "fontSize": 9,
+                        }
+                      }
+                    >
+                      50+
+                       devices
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "height": 5,
+                  }
+                }
+              />
+            </View>
+            <View
+              onFocusCapture={[Function]}
+              onLayout={[Function]}
+              style={null}
+            >
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "backgroundColor": "#E8E8E8",
+                    "borderRadius": 3,
+                    "justifyContent": "center",
+                    "margin": 2,
+                    "opacity": 1,
+                    "padding": 10,
+                  }
+                }
+                testID="menu-item-45d1b6e2-35dd-41ed-b23c-403cad1663c3"
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 10,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityRole="checkbox"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": false,
+                        "disabled": undefined,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 20,
+                        "left": 10,
+                        "right": 10,
+                        "top": 20,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "borderColor": "#657786",
+                          "borderRadius": 2,
+                          "borderWidth": 2,
+                          "height": 20,
+                          "width": 20,
+                        },
+                        undefined,
+                        false,
+                        false,
+                        undefined,
+                        false,
+                      ]
+                    }
+                  />
+                  <View>
+                    <Text>
+                      Computers
+                    </Text>
+                    <Text
+                      style={
+                        {
+                          "fontSize": 9,
+                        }
+                      }
+                    >
+                      50+
+                       devices
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "height": 5,
+                  }
+                }
+              />
+            </View>
+            <View
+              onFocusCapture={[Function]}
+              onLayout={[Function]}
+              style={null}
+            >
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "backgroundColor": "#E8E8E8",
+                    "borderRadius": 3,
+                    "justifyContent": "center",
+                    "margin": 2,
+                    "opacity": 1,
+                    "padding": 10,
+                  }
+                }
+                testID="menu-item-ef8dffc9-e872-4c01-9849-b2f156a9cc84"
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 10,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityRole="checkbox"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": false,
+                        "disabled": undefined,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 20,
+                        "left": 10,
+                        "right": 10,
+                        "top": 20,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "borderColor": "#657786",
+                          "borderRadius": 2,
+                          "borderWidth": 2,
+                          "height": 20,
+                          "width": 20,
+                        },
+                        undefined,
+                        false,
+                        false,
+                        undefined,
+                        false,
+                      ]
+                    }
+                  />
+                  <View>
+                    <Text>
+                      Watches
+                    </Text>
+                    <Text
+                      style={
+                        {
+                          "fontSize": 9,
+                        }
+                      }
+                    >
+                      50+
+                       devices
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "height": 5,
+                  }
+                }
+              />
+            </View>
+            <View
+              onFocusCapture={[Function]}
+              onLayout={[Function]}
+              style={null}
+            >
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "backgroundColor": "#E8E8E8",
+                    "borderRadius": 3,
+                    "justifyContent": "center",
+                    "margin": 2,
+                    "opacity": 1,
+                    "padding": 10,
+                  }
+                }
+                testID="menu-item-f50e7839-4f90-4960-a767-61f9c383d818"
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 10,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityRole="checkbox"
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": false,
+                        "disabled": undefined,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    hitSlop={
+                      {
+                        "bottom": 20,
+                        "left": 10,
+                        "right": 10,
+                        "top": 20,
+                      }
+                    }
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "borderColor": "#657786",
+                          "borderRadius": 2,
+                          "borderWidth": 2,
+                          "height": 20,
+                          "width": 20,
+                        },
+                        undefined,
+                        false,
+                        false,
+                        undefined,
+                        false,
+                      ]
+                    }
+                  />
+                  <View>
+                    <Text>
+                      TVs
+                    </Text>
+                    <Text
+                      style={
+                        {
+                          "fontSize": 9,
+                        }
+                      }
+                    >
+                      50+
+                       devices
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View
+              onLayout={[Function]}
+            >
+              <View
+                style={
+                  {
+                    "marginBottom": 20,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </RCTScrollView>
+      </View>
+      <View
+        style={
+          {
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+              "gap": 4,
+              "padding": 5,
+            }
+          }
+        >
+          <Text>
+            Selected variants:
+          </Text>
+          <RCTScrollView
+            ListEmptyComponent={
+              <Text
+                style={
+                  {
+                    "color": "grey",
+                  }
+                }
+              >
+                None so far
+              </Text>
+            }
+            contentContainerStyle={
+              {
+                "height": 30,
+              }
+            }
+            data={[]}
+            getItem={[Function]}
+            getItemCount={[Function]}
+            horizontal={true}
+            keyExtractor={[Function]}
+            onContentSizeChange={[Function]}
+            onLayout={[Function]}
+            onMomentumScrollBegin={[Function]}
+            onMomentumScrollEnd={[Function]}
+            onScroll={[Function]}
+            onScrollBeginDrag={[Function]}
+            onScrollEndDrag={[Function]}
+            removeClippedSubviews={false}
+            renderItem={[Function]}
+            scrollEventThrottle={0.0001}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            stickyHeaderIndices={[]}
+            viewabilityConfigCallbackPairs={[]}
+          >
+            <View>
+              <Text
+                onLayout={[Function]}
+                style={
+                  {
+                    "color": "grey",
+                  }
+                }
+              >
+                None so far
+              </Text>
+            </View>
+          </RCTScrollView>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
+
+exports[`Tree menu handles the case where datablueprint is an empty array and displays nothing without giving an error 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+    }
+  }
+  testID="tree-menu"
+>
+  <View
+    style={
+      {
+        "flex": 8,
+      }
+    }
+  >
+    <RCTScrollView
+      ItemSeparatorComponent={[Function]}
+      ListFooterComponent={
+        <View
+          style={
+            {
+              "marginBottom": 20,
+            }
+          }
+        />
+      }
+      getItem={[Function]}
+      getItemCount={[Function]}
+      keyExtractor={[Function]}
+      onContentSizeChange={[Function]}
+      onLayout={[Function]}
+      onMomentumScrollBegin={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={0.0001}
+      stickyHeaderIndices={[]}
+      viewabilityConfigCallbackPairs={[]}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+        >
+          <View
+            style={
+              {
+                "marginBottom": 20,
+              }
+            }
+          />
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <View
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flex": 1,
+          "gap": 4,
+          "padding": 5,
+        }
+      }
+    >
+      <Text>
+        Selected variants:
+      </Text>
+      <RCTScrollView
+        ListEmptyComponent={
+          <Text
+            style={
+              {
+                "color": "grey",
+              }
+            }
+          >
+            None so far
+          </Text>
+        }
+        contentContainerStyle={
+          {
+            "height": 30,
+          }
+        }
+        data={[]}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={true}
+        keyExtractor={[Function]}
+        onContentSizeChange={[Function]}
+        onLayout={[Function]}
+        onMomentumScrollBegin={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={0.0001}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        stickyHeaderIndices={[]}
+        viewabilityConfigCallbackPairs={[]}
+      >
+        <View>
+          <Text
+            onLayout={[Function]}
+            style={
+              {
+                "color": "grey",
+              }
+            }
+          >
+            None so far
+          </Text>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`tree menu renders correctly when given dataBlueprint 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+    }
+  }
+  testID="tree-menu"
+>
+  <View
+    style={
+      {
+        "flex": 8,
+      }
+    }
+  >
+    <RCTScrollView
+      ItemSeparatorComponent={[Function]}
+      ListFooterComponent={
+        <View
+          style={
+            {
+              "marginBottom": 20,
+            }
+          }
+        />
+      }
+      getItem={[Function]}
+      getItemCount={[Function]}
+      keyExtractor={[Function]}
+      onContentSizeChange={[Function]}
+      onLayout={[Function]}
+      onMomentumScrollBegin={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={0.0001}
+      stickyHeaderIndices={[]}
+      viewabilityConfigCallbackPairs={[]}
+    >
+      <View>
+        <View
+          onLayout={[Function]}
+        >
+          <View
+            style={
+              {
+                "marginBottom": 20,
+              }
+            }
+          />
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+  <View
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "flex": 1,
+          "gap": 4,
+          "padding": 5,
+        }
+      }
+    >
+      <Text>
+        Selected variants:
+      </Text>
+      <RCTScrollView
+        ListEmptyComponent={
+          <Text
+            style={
+              {
+                "color": "grey",
+              }
+            }
+          >
+            None so far
+          </Text>
+        }
+        contentContainerStyle={
+          {
+            "height": 30,
+          }
+        }
+        data={[]}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={true}
+        keyExtractor={[Function]}
+        onContentSizeChange={[Function]}
+        onLayout={[Function]}
+        onMomentumScrollBegin={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={0.0001}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        stickyHeaderIndices={[]}
+        viewabilityConfigCallbackPairs={[]}
+      >
+        <View>
+          <Text
+            onLayout={[Function]}
+            style={
+              {
+                "color": "grey",
+              }
+            }
+          >
+            None so far
+          </Text>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+</View>
+`;
