@@ -1,5 +1,10 @@
-import {StatusBar} from "expo-status-bar";
-import {SafeAreaView, StyleSheet, View} from "react-native";
+import {
+	Platform,
+	SafeAreaView,
+	StyleSheet,
+	View,
+	StatusBar,
+} from "react-native";
 
 import TreeMenu from "./components/TreeMenu";
 import {useMemo} from "react";
@@ -24,10 +29,10 @@ export default function App() {
 const styles = StyleSheet.create({
 	root: {
 		flex: 1,
+		paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
 	},
 	container: {
 		backgroundColor: "#fff",
-		// paddingHorizontal: 10,
 		flex: 1,
 	},
 });
