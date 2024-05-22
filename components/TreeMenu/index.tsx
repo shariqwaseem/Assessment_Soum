@@ -16,18 +16,34 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const TreeMenu = () => {
 	const {dataBlueprint} = useContext(DataContext);
+
 	const reducer = useCallback(
 		(state: State, action: Action): State => {
 			const ids = extractAllIds(action.payload);
-
+			const parents = getAncestors(
+				action.payload.id as string,
+				dataBlueprint,
+			);
 			switch (action.type) {
 				case "ADD":
-					return [...state, ...ids];
+					// Find if all children of a parent are selected, then select the parent too until all the parents are selected
+					let newState = [...state, ...ids];
+					parents?.reverse()?.forEach((child) => {
+						// Remove first element because first element is self
+						const children = getChildren(
+							child,
+							dataBlueprint,
+						)?.slice(1);
+
+						const allFoundChildrenTicked = children.every((sItem) =>
+							newState.includes(sItem),
+						);
+						if (allFoundChildrenTicked) {
+							newState.push(child);
+						}
+					});
+					return newState;
 				case "REMOVE": {
-					const parents = getAncestors(
-						action.payload.id as string,
-						dataBlueprint,
-					);
 					return state.filter(
 						(id) => !ids.includes(id) && !parents?.includes(id),
 					);
