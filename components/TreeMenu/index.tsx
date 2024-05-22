@@ -84,6 +84,7 @@ const TreeMenu = () => {
 			}
 		}, []);
 		return [...checkedSelected]?.map((selectedItem) => {
+			// Append the name of parent if the item is more than 2 down in the hierarchy.
 			const {id, heir} = JSON.parse(selectedItem) || {};
 			if (heir > 2) {
 				const ancestors = getAncestors(id, dataBlueprint)?.map(
